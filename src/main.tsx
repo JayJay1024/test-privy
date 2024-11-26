@@ -11,6 +11,7 @@ createRoot(document.getElementById('root')!).render(
       config={{
         appearance: {
           loginMessage: 'Please login to continue',
+          theme: 'dark',
         }
       }}
     >
