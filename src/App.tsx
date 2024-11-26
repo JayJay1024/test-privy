@@ -225,7 +225,7 @@ function App() {
   };
 
   return (
-    <>
+    <div className="flex flex-col gap-4 min-h-screen items-center justify-center">
       <button onClick={login} disabled={disableLogin}>
         Login
       </button>
@@ -251,9 +251,9 @@ function App() {
       </button>
 
       <button onClick={handleGetAllowance}>Get Allowance</button>
-      <input value={input} onChange={(e) => setInput(e.target.value)} />
+      <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Amount" />
       <button onClick={handleApprove}>Approve</button>
-    </>
+    </div>
   );
 }
 
