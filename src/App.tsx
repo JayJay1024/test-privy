@@ -177,7 +177,7 @@ const Jay01: Address = "0x763a67e57b36229ad9ffdf62b6256d864b61ce28";
 
 function App() {
   const { wallets } = useWallets();
-  const { ready, user, authenticated, login, logout, sendTransaction } = usePrivy();
+  const { ready, user, authenticated, login, logout, sendTransaction, linkPasskey } = usePrivy();
   const [input, setInput] = useState<string>("");
 
   useEffect(() => {
@@ -228,6 +228,7 @@ function App() {
         Login
       </button>
       <button onClick={logout} disabled={!ready || !authenticated}>Logout</button>
+      <button onClick={linkPasskey} disabled={!ready || !authenticated}>Link Passkey</button>
       <button
         onClick={async () => {
           const wallet = wallets.at(0);
