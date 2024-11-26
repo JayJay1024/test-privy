@@ -1,5 +1,4 @@
 import { usePrivy } from '@privy-io/react-auth'
-import './App.css'
 
 function App() {
   const { ready, authenticated, login } = usePrivy()
