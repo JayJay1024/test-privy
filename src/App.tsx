@@ -180,8 +180,6 @@ function App() {
   const { ready, user, authenticated, login, logout, sendTransaction } = usePrivy();
   const [input, setInput] = useState<string>("");
 
-  const disableLogin = !ready || (ready && authenticated);
-
   useEffect(() => {
     console.log("user", user);
   }, [user]);
@@ -226,10 +224,10 @@ function App() {
 
   return (
     <div className="flex flex-col gap-4 min-h-screen items-center justify-center">
-      <button onClick={login} disabled={disableLogin}>
+      <button onClick={login} disabled={!ready || authenticated}>
         Login
       </button>
-      <button onClick={logout} disabled={disableLogin}>Logout</button>
+      <button onClick={logout} disabled={!ready || !authenticated}>Logout</button>
       <button
         onClick={async () => {
           const wallet = wallets.at(0);
