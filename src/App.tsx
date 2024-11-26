@@ -177,7 +177,7 @@ const Jay01: Address = "0x763a67e57b36229ad9ffdf62b6256d864b61ce28";
 
 function App() {
   const { wallets } = useWallets();
-  const { ready, user, authenticated, login, sendTransaction } = usePrivy();
+  const { ready, user, authenticated, login, logout, sendTransaction } = usePrivy();
   const [input, setInput] = useState<string>("");
 
   const disableLogin = !ready || (ready && authenticated);
@@ -229,6 +229,7 @@ function App() {
       <button onClick={login} disabled={disableLogin}>
         Login
       </button>
+      <button onClick={logout} disabled={disableLogin}>Logout</button>
       <button
         onClick={async () => {
           const wallet = wallets.at(0);
